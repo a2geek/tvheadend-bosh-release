@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+mkdir tvheadend
+tar --directory=tvheadend -xzf tvheadend-*.tar.gz --strip-components=1
+
+pushd tvheadend
+    mkdir -p ${BOSH_INSTALL_TARGET}/{bin,lib,man,share}
+
+    source /var/vcap/packages/git/bosh/compile.env
+    source /var/vcap/packages/python-2.7/bosh/compile.env
+
+    ./configure --prefix=${BOSH_INSTALL_TARGET}
+    make -j3
+    make install
+popd

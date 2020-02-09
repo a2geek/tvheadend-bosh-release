@@ -1,0 +1,9 @@
+---
+name: tvheadend
+
+dependencies:
+- git
+- python-2.7
+
+files:
+- tvheadend-4.2.8.tar.gz

@@ -1,0 +1,5 @@
+# Set the Tvheadend persistent disk.
+---
+- type: replace
+  path: /instance_groups/name=tvheadend/persistent_disk
+  value: ((tvheadend.disk_size))

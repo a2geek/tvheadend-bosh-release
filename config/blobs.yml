@@ -1,1 +1,8 @@
---- {}
+# Pull Git from the kernel.org as they create the configure script for us
+# https://mirrors.edge.kernel.org/pub/software/scm/git/
+git-2.25.0.tar.gz:
+  size: 9023390
+  sha: sha256:a98c9b96d91544b130f13bf846ff080dda2867e77fe08700b793ab14ba5346f6
+tvheadend-4.2.8.tar.gz:
+  size: 21875281
+  sha: sha256:1aef889373d5fad2a7bd2f139156d4d5e34a64b6d38b87b868a2df415f01f7ad

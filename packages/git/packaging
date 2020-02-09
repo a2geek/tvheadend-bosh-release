@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+mkdir git
+tar --directory=git -xzf git-*.tar.gz --strip-components=1
+
+pushd git
+    ./configure --prefix=${BOSH_INSTALL_TARGET}
+
+    make all -j3
+    make install
+popd
+
+mkdir ${BOSH_INSTALL_TARGET}/bosh
+cp bosh/git.compile.env ${BOSH_INSTALL_TARGET}/bosh/compile.env
+cp bosh/git.runtime.env ${BOSH_INSTALL_TARGET}/bosh/runtime.env

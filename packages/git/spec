@@ -1,0 +1,8 @@
+---
+name: git
+
+dependencies: []
+
+files:
+- git-2.25.0.tar.gz
+- bosh/git*
