@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -eu
+
+export TVHEADEND_BASE=/var/vcap/store/tvheadend
+
+mkdir -p ${TVHEADEND_BASE}/videos
+chown vcap:vcap ${TVHEADEND_BASE} ${TVHEADEND_BASE}/videos

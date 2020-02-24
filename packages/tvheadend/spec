@@ -7,3 +7,5 @@ dependencies:
 
 files:
 - tvheadend-4.2.8.tar.gz
+- libhdhomerun_20190621.tgz
+- libdvbcsa-1.1.0.tar.gz

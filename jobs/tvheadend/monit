@@ -1,0 +1,5 @@
+check process tvheadend
+  with pidfile /var/vcap/sys/run/tvheadend/tvheadend.pid
+  start program "/var/vcap/jobs/tvheadend/bin/ctl start"
+  stop program "/var/vcap/jobs/tvheadend/bin/ctl stop"
+  group vcap

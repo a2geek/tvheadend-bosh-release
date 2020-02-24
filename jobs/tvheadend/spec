@@ -1,9 +1,12 @@
 ---
 name: tvheadend
 
-templates: {}
+templates:
+  ctl:        bin/ctl
+  pre-start:  bin/pre-start
 
 packages:
 - tvheadend
+- python-2.7
 
 properties: {}

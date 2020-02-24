@@ -1,8 +1,12 @@
-# Pull Git from the kernel.org as they create the configure script for us
-# https://mirrors.edge.kernel.org/pub/software/scm/git/
 git-2.25.0.tar.gz:
   size: 9023390
   sha: sha256:a98c9b96d91544b130f13bf846ff080dda2867e77fe08700b793ab14ba5346f6
+libdvbcsa-1.1.0.tar.gz:
+  size: 345487
+  sha: sha256:4db78af5cdb2641dfb1136fe3531960a477c9e3e3b6ba19a2754d046af3f456d
+libhdhomerun_20190621.tgz:
+  size: 50817
+  sha: sha256:9a60f663b00de5f820bdb85806662e25f22da248b14942e33a8b43a0331f855a
 tvheadend-4.2.8.tar.gz:
   size: 21875281
   sha: sha256:1aef889373d5fad2a7bd2f139156d4d5e34a64b6d38b87b868a2df415f01f7ad

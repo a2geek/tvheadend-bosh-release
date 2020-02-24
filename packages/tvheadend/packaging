@@ -2,16 +2,44 @@
 
 set -e
 
+COMPILE_DIR=${PWD}
+mkdir -p ${BOSH_INSTALL_TARGET}/{bin,lib,man,share,src}
+
+# Keep the source files handy!
+cp packaging ${BOSH_INSTALL_TARGET}/src
+cp *.tar.gz ${BOSH_INSTALL_TARGET}/src
+cp *.tgz ${BOSH_INSTALL_TARGET}/src
+
+source /var/vcap/packages/git/bosh/compile.env
+source /var/vcap/packages/python-2.7/bosh/compile.env
+
+#--- libhdhomerun
+
+mkdir libhdhomerun
+tar --directory=libhdhomerun -xzf libhdhomerun_*.tgz --strip-components=1
+
+pushd libhdhomerun
+    make -j3
+    cp hdhomerun_config ${BOSH_INSTALL_TARGET}/bin
+popd
+
+#--- libdvbcsa
+
+mkdir libdvbcsa
+tar --directory=libdvbcsa -xzf libdvbcsa-*.tar.gz --strip-components=1
+
+pushd libdvbcsa
+    ./configure
+    make -j3
+popd
+
+#--- tvheadend
+
 mkdir tvheadend
 tar --directory=tvheadend -xzf tvheadend-*.tar.gz --strip-components=1
 
 pushd tvheadend
-    mkdir -p ${BOSH_INSTALL_TARGET}/{bin,lib,man,share}
-
-    source /var/vcap/packages/git/bosh/compile.env
-    source /var/vcap/packages/python-2.7/bosh/compile.env
-
     ./configure --prefix=${BOSH_INSTALL_TARGET}
-    make -j3
+    CPPFLAGS=-I${COMPILE_DIR} make -j3
     make install
 popd
