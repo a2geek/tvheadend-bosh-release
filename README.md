@@ -29,7 +29,6 @@ Structured variables will be similar to this:
 ```
 tvheadend:
   disk_size: ...
-  base_url: http(s)://...
 ```
 
 ## HDHomeRun
