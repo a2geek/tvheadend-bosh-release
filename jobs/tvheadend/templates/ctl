@@ -13,13 +13,11 @@ case $1 in
     mkdir -p $RUN_DIR $LOG_DIR
     chown -R vcap:vcap $RUN_DIR $LOG_DIR
 
-    # Looks like TVHeadend looks at HOME directory as a start...
+    # The 'tvheadend' user has been configured with the proper HOME directory.
     # See https://github.com/tvheadend/tvheadend/blob/release/4.2/src/dvr/dvr_config.c#L283
-    export HOME=${STORE_DIR}/videos
-
     cd /var/vcap/packages/tvheadend
     bin/tvheadend \
-        --user vcap \
+        --user tvheadend \
         --group vcap \
         --firstrun \
         --fork \
