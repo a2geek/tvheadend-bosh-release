@@ -3,7 +3,9 @@ name: tvheadend
 
 releases:
 - name: tvheadend
-  version: latest
+  version: "v1"
+  url: "https://github.com/a2geek/tvheadend-bosh-release/releases/download/v1/tvheadend-bosh-release.tgz"
+  sha1: "a07f1e5af6a56a7e6886548db5fdaa1e9aaa0c09"
 - name: "bpm"
   version: "1.1.6"
   url: "https://bosh.io/d/github.com/cloudfoundry/bpm-release?v=1.1.6"
