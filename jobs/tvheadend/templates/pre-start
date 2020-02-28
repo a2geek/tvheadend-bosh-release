@@ -2,10 +2,8 @@
 
 set -eu
 
-export TVHEADEND_BASE=/var/vcap/store/tvheadend
-
-mkdir -p ${TVHEADEND_BASE}/videos
-id -u tvheadend || useradd -d ${TVHEADEND_BASE}/videos -s /usr/sbin/nologin -G vcap tvheadend
-
-chown tvheadend:vcap ${TVHEADEND_BASE} ${TVHEADEND_BASE}/videos
-
+TVHEADEND_BASE=/var/vcap/store/tvheadend
+RUN_DIR=/var/vcap/sys/run/tvheadend
+LOG_DIR=/var/vcap/sys/log/tvheadend
+mkdir -p ${RUN_DIR} ${LOG_DIR} ${TVHEADEND_BASE}/videos
+chown -R vcap:vcap ${RUN_DIR} ${LOG_DIR} ${TVHEADEND_BASE} ${TVHEADEND_BASE}/videos

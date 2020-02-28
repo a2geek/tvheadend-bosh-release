@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source /var/vcap/packages/python-2.7/bosh/runtime.env
+
+# The 'tvheadend' user has been configured with the proper HOME directory.
+# See https://github.com/tvheadend/tvheadend/blob/release/4.2/src/dvr/dvr_config.c#L283
+export HOME=/var/vcap/store/tvheadend/videos
+cd ${HOME}
+/var/vcap/packages/tvheadend/bin/tvheadend \
+    --user vcap \
+    --group vcap \
+    --firstrun \
+    --config /var/vcap/store/tvheadend

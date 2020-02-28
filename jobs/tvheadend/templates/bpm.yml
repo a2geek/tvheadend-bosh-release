@@ -1,0 +1,11 @@
+processes:
+- name: tvheadend
+  executable: /var/vcap/jobs/tvheadend/bin/bpm-start
+
+  persistent_disk: true
+
+  capabilities:
+  - NET_BIND_SERVICE
+
+  hooks:
+    pre_start: /var/vcap/jobs/tvheadend/bin/pre-start

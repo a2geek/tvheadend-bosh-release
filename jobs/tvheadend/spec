@@ -2,7 +2,8 @@
 name: tvheadend
 
 templates:
-  ctl:        bin/ctl
+  bpm.yml:    config/bpm.yml
+  bpm-start:  bin/bpm-start
   pre-start:  bin/pre-start
 
 packages:
