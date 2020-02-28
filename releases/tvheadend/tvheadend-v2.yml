@@ -1,0 +1,30 @@
+name: tvheadend
+version: v2
+commit_hash: bcce3d7
+uncommitted_changes: false
+jobs:
+- name: tvheadend
+  version: e6fcf81c2d4e78426b007b997436141e020b337e02fbe22619345986ccd29932
+  fingerprint: e6fcf81c2d4e78426b007b997436141e020b337e02fbe22619345986ccd29932
+  sha1: sha256:a9fb4d5230cee78dfadbe40e10940e87b297148d22e20e6742d35d7d94a7d015
+  packages:
+  - tvheadend
+  - python-2.7
+packages:
+- name: git
+  version: a25d8376ee5e59f18fdc7878f80e156a829ca02df0df6a2156205a9e7d6b7673
+  fingerprint: a25d8376ee5e59f18fdc7878f80e156a829ca02df0df6a2156205a9e7d6b7673
+  sha1: sha256:6b693292261ac5420c3b4a23f894cda47d27ab06d3779bf95ad4f10dd4228fdb
+  dependencies: []
+- name: python-2.7
+  version: 7063c9f4e43bf49374c2f6cc6c2f74a5467f2298
+  fingerprint: 7063c9f4e43bf49374c2f6cc6c2f74a5467f2298
+  sha1: bd130315766a7641dbd20aa328d16f084cc17965
+  dependencies: []
+- name: tvheadend
+  version: 45ee54d8eeafe8f6757f3b17efb0c53de81dfed58cd10d02661858f70a9e2ae9
+  fingerprint: 45ee54d8eeafe8f6757f3b17efb0c53de81dfed58cd10d02661858f70a9e2ae9
+  sha1: sha256:0ddc7cfdd6fc510802b4289f8b349e686253db1df79d955428bbb706f68a78c0
+  dependencies:
+  - git
+  - python-2.7
